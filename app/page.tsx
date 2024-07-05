@@ -7,7 +7,7 @@ export default function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center p-2  ">
       
-      <div className=" flex w-full items-center  md:w-3/5 p-2 rounded-full bg-grediant-blue  bg-opacity-15 drop-shadow ">
+      <div className=" flex w-full items-center  md:w-3/5 p-2 rounded-full bg-primary  bg-opacity-15 drop-shadow ">
         <AcmeLogo  /> 
       </div>
       <div className="mt-4 flex-grow flex flex-col gap-4 md:flex-row">
@@ -19,13 +19,13 @@ export default function Page() {
           </p>
           <Link
             href="/login"
-            className="flex items-center gap-5 self-start rounded-lg bg-grediant-blue px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-transparent md:text-base"
           >
             <span>Log in</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>
           <Link
             href="/dashboard"
-            className="flex items-center gap-5 self-start rounded-lg bg-grediant-blue px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
+            className="flex items-center gap-5 self-start rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
           >
             <span>Dashboard</span> <ArrowRightIcon className="w-5 md:w-6" />
           </Link>

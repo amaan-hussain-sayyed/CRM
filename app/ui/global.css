@@ -30,6 +30,6 @@ h1{
   margin: 0;
 }
 
-.bg-grediant-blue{
-  background: linear-gradient(90deg, rgb(30, 20, 218) 0%, rgb(13, 13, 201) 40%, rgb(0, 26, 255) 100%);
+.bg-primary{
+  background: linear-gradient(90deg, rgb(55, 46, 228) 0%, rgb(13, 13, 201) 40%, rgb(0, 26, 255) 100%);
 }
