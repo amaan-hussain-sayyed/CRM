@@ -7,12 +7,11 @@ export default function Layout({ children,
  }) {
     return (
         <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
-            <div className="w-full flex-none md:w-64 ">
+            <div className="w-full flex-none md:w-fit  ">
                 <SideNav />
             </div>
-            <div className="flex-grow p-6 overflow-auto    md:p-6 "> 
+            <div className="flex-grow p-6 overflow-auto  md:p-6 "> 
                 {children}
-                
             </div>
         </div>
     );

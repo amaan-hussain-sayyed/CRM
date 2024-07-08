@@ -48,8 +48,6 @@ export const ChartMaker: React.FC<ChartMakerProps> = ({ data, id, title, labelKe
       plugins: {
         legend: {
           position: "bottom" as const,
-
-
         }
       }
     }

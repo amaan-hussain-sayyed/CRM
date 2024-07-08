@@ -7,7 +7,7 @@ export default function AcmeLogo() {
       className={`font-semibold flex flex-row items-center leading-none text-white gap-2`}
     >
       <GlobeAltIcon width={30} height={30} />
-      <p className="text-xl hidden  md:inline " >InoVasCMS</p>
+      <p className="text-xl hidden  md:inline " >InoVas</p>
     </div>
   );
 }

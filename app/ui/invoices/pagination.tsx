@@ -4,14 +4,17 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { generatePagination } from '@/app/lib/utils';
+import { useActionState } from 'react';
 
-export default function Pagination({ totalPages,currentPage }: { totalPages: number,currentPage:number }) {
+
+export default function Pagination({ currentPage,totalPages }: { totalPages: number,currentPage:number }) {
   // NOTE: Uncomment this code in Chapter 7
 
+  console.log(currentPage,totalPages)
      const allPages = generatePagination(currentPage, totalPages);
 
   function createPageURL(arg0: number): string {
-    throw new Error('Function not implemented.');
+       return  true
   }
 
   return (
@@ -33,7 +36,6 @@ export default function Pagination({ totalPages,currentPage }: { totalPages: num
             if (index === allPages.length - 1) position = 'last';
             if (allPages.length === 1) position = 'single';
             if (page === '...') position = 'middle';
-
             return (
               <PaginationNumber
                 key={page}
