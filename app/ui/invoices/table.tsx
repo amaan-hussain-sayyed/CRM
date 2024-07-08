@@ -13,11 +13,18 @@ export default async function InvoicesTable({
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
 
+
+
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
         <div className="rounded-lg bg-black  md:bg-gray-900 p-2 md:pt-0">
           <div className="md:hidden">
+            {( invoices.length == 0 || !invoices )&&
+              <div className="mb-2 w-full min-h-0.5 rounded-xl  bg-black md:bg-gray-900 p-4">
+              <p className="text-xl font-medium text-gray-100">No invoices found</p>
+            </div>
+            }
             {invoices?.map((invoice) => (
               <div
                 key={invoice.id}
@@ -46,7 +53,7 @@ export default async function InvoicesTable({
                     </p>
                     <p>{formatDateToLocal(invoice.date)}</p>
                   </div>
-                  <div className="flex justify-end gap-2">
+                  <div className="flex flex-row w-fit gap-2">
                     <UpdateInvoice id={invoice.id} />
                     <DeleteInvoice id={invoice.id} />
                   </div>
@@ -78,6 +85,13 @@ export default async function InvoicesTable({
               </tr>
             </thead>
             <tbody className="bg-gray-950  ">
+              {(invoices.length == 0 || !invoices) &&
+                <tr className="w-full border-b border-black py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg">
+                  <td colSpan={6} rowSpan={10} className="text-center">
+                    data Not Found
+                  </td>
+                </tr>
+}
               {invoices?.map((invoice) => (
                 <tr
                   key={invoice.id}
@@ -95,20 +109,20 @@ export default async function InvoicesTable({
                       <p>{invoice.name}</p>
                     </div>
                   </td>
-                  <td className=" px-3 py-3">
+                  <td className=" p-1">
                     {invoice.email}
                   </td>
-                  <td className=" px-3 py-3">
+                  <td className="p-1">
                     {formatCurrency(invoice.amount)}
                   </td>
-                  <td className=" px-3 py-3">
+                  <td className="p-1 ">
                     {formatDateToLocal(invoice.date)}
                   </td>
-                  <td className=" px-3 py-3">
+                  <td className="p-1 ">
                     <InvoiceStatus status={invoice.status} />
                   </td>
-                  <td className=" py-3 pl-6 w-fit">
-                    <div className="flex-row"> 
+                  <td className="   w-fit">
+                    <div className="flex"> 
                       <DeleteInvoice id={invoice.id} /> 
                       <UpdateInvoice id={invoice.id} />
                     </div>
