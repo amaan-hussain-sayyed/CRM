@@ -23,6 +23,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
               name="customerId"
               className="peer block w-full cursor-pointer rounded-md  py-2 pl-10 text-sm outline-2 placeholder:text-gray-600"
               defaultValue=""
+
             >
               <option value="" disabled>
                 Select a customer
