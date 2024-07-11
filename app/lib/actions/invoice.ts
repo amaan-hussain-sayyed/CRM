@@ -13,7 +13,7 @@ const FormSchema = z.object({
   date: z.string(),
 });
 
-const createInvoice = FormSchema.omit({ id: true, date: true });
+const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
   const { customerId, amount, status } = CreateInvoice.parse({
@@ -40,7 +40,7 @@ export async function createInvoice(formData: FormData) {
   redirect('/dashboard/Invoices');
 }
 
-
+const UpdateInvoice = FromSchema()
 export async function updateInvoice(id: string, formData: FormData) {
   const { customerId, amount, status } = UpdateInvoice.parse({
     customerId: formData.get('customerId'),
