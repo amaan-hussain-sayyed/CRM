@@ -40,7 +40,7 @@ export async function createInvoice(formData: FormData) {
   redirect('/dashboard/Invoices');
 }
 
-const UpdateInvoice = FromSchema()
+const UpdateInvoice = FormSchema()
 export async function updateInvoice(id: string, formData: FormData) {
   const { customerId, amount, status } = UpdateInvoice.parse({
     customerId: id,
