@@ -41,7 +41,7 @@ export async function createInvoice(formData: FormData) {
 }
 
 export async function updateInvoice(id: string, formData: FormData) {
-  const { customerId, amount, status } = FormData.parse({
+  const { customerId, amount, status } = FormSchema.parse({
     customerId: id,
     amount: formData.get('amount'),
     status: formData.get('status'),
