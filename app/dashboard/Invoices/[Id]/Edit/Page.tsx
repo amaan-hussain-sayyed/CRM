@@ -2,8 +2,8 @@ import Form from '@/app/ui/invoices/edit-form';
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById ,fetchCustomers } from '@/app/lib/data';
  
-export default async function Page({param}:{Id:string}) {
- const id = param.Id
+export default async function Page({params}:{Id:string}) {
+ const id = params.Id
  const [invoice, customers] = await Promise.all([
     fetchInvoiceById(id),
     fetchCustomers(),
