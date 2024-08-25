@@ -1,0 +1,69 @@
+# Robots.txt for Next.js Project
+# This file is used to manage web crawler behavior for optimal SEO and security
+
+# General Settings
+User-agent: *
+# Block API routes, Next.js internal paths, and certain admin pages
+Disallow: /api/
+Disallow: /_next/
+Disallow: /_vercel/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+
+# Block error pages and dynamic profile routes
+Disallow: /404/
+Disallow: /500/
+Disallow: /profile/*
+
+# Block sensitive file types (like config files) from being indexed
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.env$
+Disallow: /*.log$
+
+# Prevent indexing of URLs with query parameters to avoid duplicate content
+Disallow: /*?*
+
+# Block search result pages (common pattern in web apps)
+Disallow: /search/
+
+# Allow only important directories and pages to be crawled
+Allow: /
+
+# Block indexing of temporary or incomplete pages (specific Next.js routes)
+Disallow: /drafts/
+Disallow: /staging/
+Disallow: /preview/
+
+# Special Directives for Specific User-Agents
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap and Crawl Rate Settings
+Sitemap: https://www.yourwebsite.com/sitemap.xml
+
+# Optional: Specify crawl delay for large sites or if server load is an issue
+# Crawl-delay: 10
+
+# Block access to specific parts of the site during peak traffic hours (advanced)
+# User-agent: *
+# Visit-time: 0800-1700
+
+# Block any external crawlers if needed (add their specific user-agents)
+User-agent: BadBot
+Disallow: /
+
+# Additional security: Block access to certain folders and files
+Disallow: /node_modules/
+Disallow: /private/
+Disallow: /backup/
+
+# Allow Google's Image Bot to crawl images
+User-agent: Googlebot-Image
+Allow: /images/
+
+# End of file
